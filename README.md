@@ -1,73 +1,79 @@
-# Welcome to your Lovable project
+# 🚆 RakeMitra – AI/ML-Based Rake Optimization System for SAIL
 
-## Project info
+## 📘 Overview
+*RakeMitra* is an Artificial Intelligence and Machine Learning (AI/ML)–powered decision support system developed to optimize *rake formation strategies* for the *Steel Authority of India Limited (SAIL), starting with the **Bokaro Steel Plant*.  
+The system uses data from *Freight Operations Information System (FOIS)* and *Systems Applications and Products (SAP)* to generate efficient, data-driven rake plans that reduce logistics costs, improve wagon utilization, and streamline multi-stockyard dispatch operations.
 
-**URL**: https://lovable.dev/projects/16923d5d-b298-41cf-a5a5-096e82d6da29
+---
 
-## How can I edit this code?
+## 🎯 Problem Statement
+Currently, rake formation at SAIL plants is a *manual, rule-based process* that requires coordination between:
+- Material availability at plants and stockyards  
+- Pending customer orders and priorities  
+- Wagon/rake availability and capacity  
+- Route and siding constraints  
 
-There are several ways of editing your application.
+This results in:
+- Delayed rake formation and dispatch  
+- Underutilized wagons or partial rake loads  
+- Increased freight and demurrage costs  
+- Sub-optimal resource allocation  
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/16923d5d-b298-41cf-a5a5-096e82d6da29) and start prompting.
+## 💡 Proposed Solution
+*RakeMitra* introduces an AI/ML-driven system that:
+- Uses existing FOIS and SAP data for real-time analysis  
+- Applies *Mixed Integer Linear Programming (MILP)* and *Google OR-Tools* for optimization  
+- Uses *TensorFlow* for predictive modeling and continuous learning  
+- Offers a *dashboard interface* for human-in-loop decision-making  
+- Scales seamlessly across all SAIL plants through a cloud-ready architecture  
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## ⚙ System Workflow
+1. *Data Input:* Pull FOIS (wagon/route) and SAP (orders/inventory) data  
+2. *Data Preprocessing:* Clean and map operational data  
+3. *AI/ML Optimization Engine:* Generate optimal rake formations  
+4. *Dashboard Interface:* Visualize, review, and modify suggestions  
+5. *Approval & Execution:* Finalize rake plan and dispatch  
+6. *Feedback Loop:* Learn from outcomes to improve future recommendations  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🧠 Technical Stack
+| Component | Technology Used |
+|------------|-----------------|
+| Data Handling | PostgreSQL, Python (Pandas) |
+| Optimization | Google OR-Tools, MILP |
+| AI/ML | TensorFlow |
+| Dashboard | React / Flask (or Streamlit prototype) |
+| Deployment | Cloud-based (GCP / AWS ready) |
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🚀 Key Features
+- AI-driven rake formation optimization  
+- Predictive demand and wagon forecasting  
+- Human-in-loop decision support system  
+- What-if simulation and cost analysis  
+- Scalable and cloud-ready design  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📊 Expected Impact
+- Up to *25–30% reduction* in logistics and demurrage costs  
+- *Higher wagon utilization* and fewer idle resources  
+- *Improved dispatch accuracy* and turnaround time  
+- *Predictive readiness* for future demand and disruptions  
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 👥 Team
+Developed by the *RakeMitra Team* for *Smart India Hackathon 2025*.  
+Our goal: Digitally transform SAIL’s rail logistics with intelligence, efficiency, and transparency.  
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/16923d5d-b298-41cf-a5a5-096e82d6da29) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📎 License
+This project is developed for research and demonstration under the *Smart India Hackathon 2025* and is intended for internal use by SAIL.
