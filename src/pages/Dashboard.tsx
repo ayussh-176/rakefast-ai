@@ -7,9 +7,12 @@ import { DataUpload } from "@/components/dashboard/DataUpload";
 import { RakeFormation } from "@/components/dashboard/RakeFormation";
 import { SimulationResults } from "@/components/dashboard/SimulationResults";
 import { KPICharts } from "@/components/dashboard/KPICharts";
+import { LearningCurve } from "@/components/dashboard/LearningCurve";
+import { ActivityLogs } from "@/components/dashboard/ActivityLogs";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -47,25 +50,26 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b bg-card sticky top-0 z-50">
+      <header className="border-b bg-card/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => navigate('/')}>
-              <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
+              <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
                 <Train className="h-6 w-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-lg font-bold text-foreground">SAIL RakeOptimizer</h1>
+                <h1 className="text-lg font-bold text-foreground">RakeMitra</h1>
                 <p className="text-xs text-muted-foreground">Dashboard v1.0</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <Badge variant={optimizationStatus === 'processing' ? 'default' : 'secondary'}>
+              <Badge variant={optimizationStatus === 'processing' ? 'default' : 'secondary'} className="shadow-sm">
                 {optimizationStatus === 'processing' && <RefreshCw className="mr-1 h-3 w-3 animate-spin" />}
                 {optimizationStatus === 'idle' && 'Ready'}
                 {optimizationStatus === 'processing' && 'Processing'}
                 {optimizationStatus === 'complete' && 'Complete'}
               </Badge>
+              <ThemeToggle />
               <Button variant="outline" size="sm">Logout</Button>
             </div>
           </div>
@@ -192,14 +196,10 @@ const Dashboard = () => {
                   <KPICharts />
                 </TabsContent>
                 <TabsContent value="learning" className="mt-6">
-                  <div className="h-64 flex items-center justify-center text-muted-foreground">
-                    Learning curve visualization (TensorFlow training metrics)
-                  </div>
+                  <LearningCurve />
                 </TabsContent>
                 <TabsContent value="logs" className="mt-6">
-                  <div className="h-64 flex items-center justify-center text-muted-foreground">
-                    Real-time activity and optimization logs
-                  </div>
+                  <ActivityLogs />
                 </TabsContent>
               </Tabs>
             </CardContent>
