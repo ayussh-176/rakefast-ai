@@ -75,9 +75,6 @@ const Index = () => {
               Launch Dashboard
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="shadow-sm hover:shadow-lg transition-shadow">
-              View Documentation
-            </Button>
           </div>
         </div>
 
